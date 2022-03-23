@@ -1,0 +1,5 @@
+File: hello.txt
+Number of lines: 5
+Number of words: 10
+Number of distinct words: 0
+Most commonly used word: hello

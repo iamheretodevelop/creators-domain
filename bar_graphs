@@ -1,0 +1,35 @@
+# You are given an array of no. that represent heights on a bar graph. A bucket of water is dropped on the bar graph. Write a function to determine how much water would be retained by the graph.
+
+# Examples 
+# [1,0,2,1,3] = 2
+
+#              _      
+#        _    |  |
+#  _   |  | _ |  |
+# |  |_|  |   |  |
+
+# [3,2,1,2,3] = 4
+# [1,6,3,2,2,5,0,1,2] = 6
+
+# all of the heights on the bar graph have the same height
+
+# [1, 0, 9, 4, 5, 8, 7, 4]
+
+def maxFromLeft(index, bar_graph):
+    pass
+
+def maxFromRight(index, bar_graph):
+    pass
+
+def water_levels(bar_graph):
+    water_retained = 0
+    for bar_index in range(1, len(bar_graph)-1):
+        max_right = maxFromRight(bar_index, bar_graph)	
+        max_left = maxFromLeft(bar_index, bar_graph)
+        if bar_graph[bar_index] > max_left or bar_graph[bar_index] > max_right:
+	        continue
+        if max_right > max_left:
+            water_retained += max_left - bar_graph[bar_index]
+        elif max_right <= max_left:
+            water_retained += max_right - bar_graph[bar_index]
+    return water_retained

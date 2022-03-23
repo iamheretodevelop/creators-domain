@@ -1,0 +1,5 @@
+term = input("Enter a word: ")
+term_uppercase = term.upper()
+term_lowercase = term.lower()
+i = len(term)
+print ("The last five letters of the string are", term[-5:])
